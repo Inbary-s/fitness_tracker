@@ -40,6 +40,13 @@ app.get('/api/workouts', function(req, res){
     })
 })
 
+app.get('/api/workouts/range', function(req, res){
+    db.find().then(data => {
+        console.log(data);
+        res.json(data);
+    })
+})
+
 app.put('/api/workouts/:id', function(req, res){
     console.log(req.body)
     db.update({_id:req.params.id }, {$push: {exercises:req.body}}).then(response=>res.json(response))

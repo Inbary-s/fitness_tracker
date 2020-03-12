@@ -116,8 +116,6 @@ async function handleFormSubmit(event) {
   await API.addExercise(workoutData)
   clearInputs();
   toast.classList.add("success");
-  
-  // add if HERE!!! ---- location.href = location.href ????
 }
 
 function handleToastAnimationEnd() {
@@ -143,14 +141,13 @@ if (workoutTypeSelect) {
 }
 if (completeButton) {
   completeButton.addEventListener("click", function (event) {
-    shouldNavigateAway = true;
+    shouldNavigateAway = true; // not needed???
     window.location.replace('/stats')
     handleFormSubmit(event);
   });
 }
 if (addButton) {
   addButton.addEventListener("click", handleFormSubmit);
-  shouldNavigateAway = false;
 }
 toast.addEventListener("animationend", handleToastAnimationEnd);
 
