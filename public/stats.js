@@ -8,7 +8,6 @@ fetch("/api/workouts/range")
     populateChart(data);
   });
 
-
 API.getWorkoutsInRange()
 
   function generatePalette() {
@@ -17,18 +16,18 @@ API.getWorkoutsInRange()
     "#2f4b7c",
     "#665191",
     "#a05195",
-    "#d45087",
-    "#f95d6a",
+    "#5190a0",
+    "#209b3e",
     "#ff7c43",
-    "ffa600",
+    "#ffa600",
     "#003f5c",
     "#2f4b7c",
     "#665191",
     "#a05195",
-    "#d45087",
-    "#f95d6a",
+    "#5190a0",
+    "#209b3e",
     "#ff7c43",
-    "ffa600"
+    "#ffa600"
   ]
 
   return arr;
@@ -59,8 +58,8 @@ function populateChart(data) {
       datasets: [
         {
           label: "Workout Duration In Minutes",
-          backgroundColor: "red",
-          borderColor: "red",
+          backgroundColor: "purple",
+          borderColor: "purple",
           data: durations,
           fill: false
         }
