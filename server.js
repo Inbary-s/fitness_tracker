@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const path = require('path')
 const PORT = process.env.PORT || 3000;
 const db = require('./models/exercise')
-
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));

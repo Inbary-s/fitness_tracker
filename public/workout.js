@@ -1,7 +1,6 @@
 async function initWorkout() {
   const lastWorkout = await API.getLastWorkout();
   console.log("Last workout:", lastWorkout);
-  console.log(formatDate(lastWorkout.date))
   if (lastWorkout) {
     document
       .querySelector("a[href='/exercise?']")
@@ -13,7 +12,6 @@ async function initWorkout() {
       numExercises: lastWorkout.exercises.length,
       ...tallyExercises(lastWorkout.exercises)
     };
-
     renderWorkoutSummary(workoutSummary);
   } else {
     renderNoWorkoutText()
@@ -67,13 +65,10 @@ function renderWorkoutSummary(summary) {
   Object.keys(summary).forEach(key => {
     const p = document.createElement("p");
     const strong = document.createElement("strong");
-
     strong.textContent = workoutKeyMap[key];
     const textNode = document.createTextNode(`: ${summary[key]}`);
-
     p.appendChild(strong);
     p.appendChild(textNode);
-
     container.appendChild(p);
   });
 }
@@ -83,7 +78,6 @@ function renderNoWorkoutText() {
   const p = document.createElement("p");
   const strong = document.createElement("strong");
   strong.textContent = "You have not created a workout yet!"
-
   p.appendChild(strong);
   container.appendChild(p);
 }
